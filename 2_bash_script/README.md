@@ -10,6 +10,5 @@ Skrip otomatisasi Bash untuk melakukan remote deployment kontainer Docker (Nginx
 
 ## 🛠️ Cara Penggunaan
 ```bash
-chmod +x deploy_vm1.sh
 ./deploy_vm1.sh
 
