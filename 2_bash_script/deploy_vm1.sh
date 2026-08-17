@@ -22,7 +22,7 @@ log_warn() {
 #Cek koneksi di VM 1
 
 TARGET_USER="wiraaja1"
-TARGET_IP="192.168.1.13"
+TARGET_IP="192.168.50.120"
 TARGET="$TARGET_USER@$TARGET_IP"
 CONTAINER_NAME="web-app-prod"
 APP_PORT="8080"
