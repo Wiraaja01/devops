@@ -1,7 +1,7 @@
 #!/bin/bash
 
 TARGET_USER="wiraaja1"
-TARGET_IP="192.168.50.120"
+TARGET_IP="192.168.10.44"
 CONTAINER_NAME="web-app-prod"
 DISK_THRESHOLD=25
 
@@ -13,11 +13,11 @@ log_error() { echo -e "\033[1;31m[ERROR]\033[0m $1"; }
 
 send_discord() {
     local message="$1"
-    if [ "$DISCORD_WEBHOOK_URL" != "https://discordapp.com/api/webhooks/1528053625421566072/aR2NMR5QtLXlE9Dawe3zhzz2wnyNgJ9oD9B0kbeoC4dVwlNZ0tw48Sk-SfXKGhgWygC0" ]; then
+    if [ -n "$DISCORD_WEBHOOK_URL" ]; then
         curl -H "Content-Type: application/json" \
              -X POST \
              -d "{\"content\": \"${message}\"}" \
-             "https://discordapp.com/api/webhooks/1528053625421566072/aR2NMR5QtLXlE9Dawe3zhzz2wnyNgJ9oD9B0kbeoC4dVwlNZ0tw48Sk-SfXKGhgWygC0" > /dev/null 2>&1
+             "$DISCORD_WEBHOOK_URL" > /dev/null 2>&1
     fi
 }
 

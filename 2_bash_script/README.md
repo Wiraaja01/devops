@@ -1,14 +1,6 @@
-# Automated Docker Container Deployment via Bash
+# Automated Bash untuk berbagai Case
 
-Skrip otomatisasi Bash untuk melakukan remote deployment kontainer Docker (Nginx) dari Control Node (WSL) ke Target VM.
+Berisi tentang Kumpulan Bash eksplorasi dari AI dan VM pribadi untuk menguji keahlian di Bash Scripting
 
-## 🚀 Fitur Skrip
-- **Idempotent Deployment**: Mengecek dan membersihkan kontainer lama sebelum menjalankan yang baru.
-- **Remote Execution**: Mengeksekusi perintah Docker di VM target secara otomatis via SSH.
-- **Health-Check**: Memastikan aplikasi berjalan normal setelah deployment.
-- **Logging System**: Format log berwarna untuk kemudahan debugging (`log_info`, `log_warn`, `log_error`).
-
-## 🛠️ Cara Penggunaan
-```bash
-./deploy_vm1.sh
+Bereksplorasi tentang case yang umum terjadi di DevOps, bagaimana maintain VM, bagaimana maintain Cloud, dan membuat VM melalui bash scripting
 
