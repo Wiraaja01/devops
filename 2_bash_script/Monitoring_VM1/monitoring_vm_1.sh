@@ -1,7 +1,7 @@
 #!/bin/bash
 
 TARGET_USER="wiraaja1"
-TARGET_IP="192.168.10.44"
+TARGET_IP="192.168.1.18"
 CONTAINER_NAME="web-app-prod"
 DISK_THRESHOLD=25
 
