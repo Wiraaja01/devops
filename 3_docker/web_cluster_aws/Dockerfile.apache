@@ -1,6 +1,4 @@
-cat << 'EOF' > Dockerfile.apache
 FROM alpine:latest
 RUN apk update && apk add apache2 && rm -rf /var/www/localhost/htdocs/*
 EXPOSE 80
 CMD ["httpd", "-D", "FOREGROUND"]
-EOF
