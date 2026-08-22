@@ -1,0 +1,28 @@
+stages:
+  - build-staging
+  - build-production
+
+# Template reusable untuk login ke GitLab Registry
+.docker_login: &docker_login
+  image: docker:24.0.5
+  services:
+    - docker:24.0.5-dind
+  before_script:
+    - echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" --password-stdin $CI_REGISTRY
+
+# 1. Job Staging (Otomatis jalan saat push)
+build_staging:
+  <<: *docker_login
+  stage: build-staging
+  script:
+    - docker build -t $CI_REGISTRY_IMAGE:staging ./11_CICD_Project/2_Gitlab_Action
+    - docker push $CI_REGISTRY_IMAGE:staging
+
+# 2. Job Production (Memerlukan klik tombol Manual)
+build_production:
+  <<: *docker_login
+  stage: build-production
+  script:
+    - docker build -t $CI_REGISTRY_IMAGE:latest .
+    - docker push $CI_REGISTRY_IMAGE:latest
+  when: manual
