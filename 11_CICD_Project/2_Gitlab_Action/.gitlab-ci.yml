@@ -15,7 +15,7 @@ build_staging:
   <<: *docker_login
   stage: build-staging
   script:
-    - docker build -t $CI_REGISTRY_IMAGE:staging .
+    - docker build -t $CI_REGISTRY_IMAGE:staging 11_CICD_Project/2_Gitlab_Action
     - docker push $CI_REGISTRY_IMAGE:staging
 
 # 2. Job Production (Memerlukan klik tombol Manual)
@@ -23,6 +23,6 @@ build_production:
   <<: *docker_login
   stage: build-production
   script:
-    - docker build -t $CI_REGISTRY_IMAGE:latest .
+    - docker build -t $CI_REGISTRY_IMAGE:latest 11_CICD_Project/2_Gitlab_Action
     - docker push $CI_REGISTRY_IMAGE:latest
   when: manual
